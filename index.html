@@ -23,7 +23,7 @@
                 <li><a href="#top">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#three">Portfolio</a></li>
-                <li><a href="">Contact</a></li>
+                <li><a href="#foot">Contact</a></li>
             </ul>
         </nav>
         </div>
@@ -39,7 +39,7 @@
             </div>
 
         </div>
-        <div class="up"></div>
+        
     </main>
 <!-- About Me -->
     <section id="about">
@@ -75,8 +75,9 @@
     <a class="up" href="#top"></a>
     </section>
 <!-- Slideshow -->
-    <section id="three" class="inner container">
-        <div class="work">
+    <section id="three" class="">
+        <div class="container inner">
+        <div class="work ">
             <h1>Few of my works..</h1>
         </div>
 
@@ -114,23 +115,51 @@
                 <span class="dot" onclick="currentSlide(2)"></span>
                 <span class="dot" onclick="currentSlide(3)"></span>
             </div>
-
+        </div>
             <a class="up" href="#top"></a>
 
     </section>
 
 <!-- Footer Contact -->    
 
-    <footer>
+    <footer id="foot">
         <div class="container">
+            <div class="foot">
             <div class="social">
+                <h2>Sifat Alam Oni</h2>
+                <p>South paikpara, 245</p>
+                <p>Mirpur. Dhaka</p>
+                <p>Bangladesh</p>
+            </div>
+
+            <div class="vrline">
 
             </div>
 
             <div class="contact">
+                <h1>Contact Me</h1>
+                <form action="">
+                    <li>
+                        <label for="">Full Name <span class="required">*</span></label>
+                        <input type="text" name="field" placeholder="Type Name here...">
+                    </li>
+                    <li>
+                        <label for="">E-mail <span class="required">*</span></label>
+                        <input type="text" name="field" placeholder="Your E-mail here...">
+                    </li>
+                    <li>
+                        <label>Your Message <span class="required">*</span></label>
+                        <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
+                    </li>
 
+                    <li>
+                        <button type="submit" value="Submit">Submit</button>
+                    </li>
+                </form>
+            </div>
             </div>
         </div>
+        <a class="up" href="#top"></a>
     </footer>
 
 

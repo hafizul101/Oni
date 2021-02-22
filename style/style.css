@@ -14,7 +14,31 @@ html {
 body {
   position: relative;
   font-family: 'Newsreader', serif;
-  background-color: rgba(0, 0, 0, 0.5);
+}
+
+body:after {
+  content: '';
+  display: block;
+  position: fixed;
+  bottom: -50vh;
+  left: -5vw;
+  width: 110vw;
+  height: 110vh;
+  pointer-events: none;
+  -webkit-transform: scale(3);
+          transform: scale(3);
+  z-index: -2;
+}
+
+body::after {
+  background-image: url(/image/charlotte-may.jpg);
+  background-size: contain;
+  background-position: top;
+  background-repeat: no-repeat;
+  -webkit-transition: opacity 1s ease,-webkit-filter 0.5s ease;
+  transition: opacity 1s ease,-webkit-filter 0.5s ease;
+  transition: filter 0.5s ease,opacity 1s ease;
+  transition: filter 0.5s ease,opacity 1s ease,-webkit-filter 0.5s ease;
 }
 
 .container {
@@ -102,10 +126,7 @@ main {
   position: relative;
   height: 100vh;
   width: 100%;
-  background-image: url(/image/charlotte-may.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+ 
 }
 
 main .hero {
@@ -159,14 +180,9 @@ main .hero .left h3 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: url(/image/mitchell-luo.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
 }
 
 #about .about {
-  background-color: linear-gradient(50deg, rgba(255, 255, 255, 0.6) 0%, black 100%);
   width: auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -229,37 +245,49 @@ main .hero .left h3 {
       flex-wrap: wrap;
 }
 
-.up {
-  height: 100px;
-  width: 100px;
-  border-radius: 50%;
-  background-color: red;
-  position: absolute;
-  bottom: 5%;
-  right: 5%;
+#three {
+  position: relative;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 10px;
 }
 
-/*.about {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    border: 2px solid white;
-
-    h1 {
-        padding-top: 100px;
-        padding-bottom: 40px;
-        color: white;
-        font-size: 4rem;
-    }
-    p {
-        padding: 50px;
-        color: white;
-        font-size: 1rem;
-    }
+#three .work {
+  padding: 50px 20px;
 }
-*/
+
+#three .work h1 {
+  font-size: 3rem;
+}
+
+.inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 /* Skills showcase */
 .smCard {
   position: relative;
@@ -298,46 +326,6 @@ main .hero .left h3 {
 .smCard p {
   padding: 10px 40px;
   text-align: center;
-}
-
-/* Slideshow container */
-#three {
-  height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  background: linear-gradient(50deg, rgba(255, 255, 255, 0.6) 0%, black 100%);
-  border-radius: 10px;
-}
-
-#three .work {
-  padding: 50px 20px;
-}
-
-#three .work h1 {
-  font-size: 3rem;
-}
-
-.inner {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .slideshow-container {
@@ -453,6 +441,237 @@ main .hero .left h3 {
 
 /* Footer */
 footer {
-  height: 50vh;
+  position: relative;
+  /*.vrline {
+        position: absolute;
+        top: 20%;
+        right: 50%;
+        height: 300px;
+        width: 5px;
+        background-color: aqua;
+    }*/
+}
+
+footer .foot {
+  height: 100vh;
+  padding: 50px 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-transform: uppercase;
+}
+
+footer .contact {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 20px 100px;
+}
+
+footer .contact h1 {
+  padding-bottom: 20px;
+}
+
+footer .contact form {
+  width: 100%;
+}
+
+footer .contact form li {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 20px 0px;
+}
+
+footer .contact form li label {
+  color: white;
+  padding: 10px 0;
+}
+
+footer .contact form li input {
+  background-color: rgba(0, 0, 0, 0);
+  display: block;
+  height: 36px;
+  width: 100%;
+  border-width: 0 0 2px 0;
+  border-color: royalblue;
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  font-size: 18px;
+}
+
+footer .contact form li input:focus {
+  outline: none;
+}
+
+footer .contact form li textarea {
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+}
+
+/* Nav Bar */
+header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  overflow: hidden;
+  -webkit-box-shadow: 0px 0px 5px 2px;
+          box-shadow: 0px 0px 5px 2px;
+  z-index: 1;
+}
+
+header .logo {
+  margin-left: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .logo a {
+  font-weight: 600;
+  color: red;
+  font-size: 4rem;
+  text-decoration: none;
+}
+
+header nav {
+  height: 8vh;
+  width: 1200px;
+  margin-right: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header nav .nav_links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header nav .nav_links li a {
+  margin-left: 30px;
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+header nav .nav_links li a:hover {
+  color: yellow;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+/* Main section */
+main {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+}
+
+main .hero {
+  position: relative;
+  height: 92vh;
+  width: 1200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  line-height: 1.5;
+}
+
+main .hero .left {
+  color: white;
+}
+
+main .hero .left span {
+  color: red;
+}
+
+main .hero .left h2 {
+  font-size: 5rem;
+  text-align: center;
+}
+
+main .hero .left h1 {
+  font-size: 7rem;
+  text-align: center;
+}
+
+main .hero .left h3 {
+  font-size: 3rem;
+}
+
+.up {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: red;
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
 }
 /*# sourceMappingURL=style.css.map */

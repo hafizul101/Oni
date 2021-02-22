@@ -1,55 +1,3 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-   
-}
-
-html{
-    scroll-behavior: smooth;
-}
-
-body{
-    position: relative;
-    font-family: 'Newsreader', serif;
-    
-}
-
-body:after{
-    content: '';
-    display: block;
-    position: fixed;
-    bottom: -50vh;
-    left: -5vw;
-    width: 110vw;
-    height: 110vh;
-    pointer-events: none;
-    transform: scale(3);
-    z-index: -2; 
-}
-
-body::after {
-    background-image: url(/image/charlotte-may.jpg);
-    background-size: contain;
-    background-position: top;
-    background-repeat: no-repeat;
-    transition: filter 0.5s ease,opacity 1s ease;
-}
-
-
-
-.container {
-    max-width: 1200px;
-    margin: auto;
-}
-
-@import "./header";
-@import "./about";
-@import "./skills";
-@import "./footer";
-
 /* Nav Bar */
 
 header {
@@ -106,7 +54,10 @@ main {
     position: relative;
     height: 100vh;
     width: 100%;
-    
+    background-image: url(/image/charlotte-may.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     .hero {
         position: relative;
         height: 92vh;
@@ -134,16 +85,3 @@ main {
         }
     }
 }
-
-
-
-.up{
-    height: 100px;
-    width: 100px;
-    border-radius: 50%;
-    background-color: red;
-    position: absolute;
-    bottom: 5%;
-    right: 5%;
-}
-
